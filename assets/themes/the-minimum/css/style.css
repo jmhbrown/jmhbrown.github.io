@@ -281,13 +281,13 @@ pre {
   margin-top: 0;
 }
 .unit-article a:link {
-  border-bottom: 0px dotted #886E91;
+  border-bottom: 1px dotted #886E91;
 }
 .unit-article a:visited {
-  border-bottom: 0px dotted #77bb77;
+  border-bottom: 1px dotted #886E91;
 }
 .unit-article a:hover {
-  border-bottom: 0px dotted;
+  border-bottom: 1px dotted #474747;
 }
 .unit-article blockquote {
   border-left: 1em solid rgba(21, 25, 25, 0.8);
@@ -379,7 +379,7 @@ pre {
   background-color: #f99157;
 }
 .unit-article .list-category span, .unit-article .list-tag span {
-  background-color: #e25608;
+  background-color: #cdcdcd;
   padding: 1px 5px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
