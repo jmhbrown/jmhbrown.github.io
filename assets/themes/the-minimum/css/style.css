@@ -1,9 +1,6 @@
 @import "base.css";
-
 @import "module.css";
-
 @import "syntaxhighlighter.css";
-
 @import "helper.css";
 /*
 Frameless			<http://framelessgrid.com/>
@@ -54,27 +51,31 @@ h6 {
   font-family: junctionregularRegular, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
   font-weight: bold;
 }
-h1, .h1 {
+h1,
+.h1 {
   font-size: 42px;
   line-height: 52px;
   margin-top: 52px;
   margin-bottom: 26px;
   letter-spacing: -1px;
 }
-h2, .h2 {
+h2,
+.h2 {
   font-size: 42px;
   line-height: 52px;
   margin-top: 52px;
   margin-bottom: 26px;
   letter-spacing: -1px;
 }
-h3, .h3 {
+h3,
+.h3 {
   font-size: 26px;
   line-height: 26px;
   margin-top: 26px;
   margin-bottom: 26px;
 }
-h4, .h4 {
+h4,
+.h4 {
   font-size: 20px;
   line-height: 26px;
   margin-top: 26px;
@@ -88,7 +89,9 @@ img {
   margin-top: 0;
   margin-bottom: 1.625em;
 }
-small, .small, aside {
+small,
+.small,
+aside {
   font-size: 0.75em;
 }
 .font-size-default {
@@ -281,13 +284,13 @@ pre {
   margin-top: 0;
 }
 .unit-article a:link {
-  border-bottom: 1px dotted #886E91;
+  border-bottom: 1px dotted #cc99cc;
 }
 .unit-article a:visited {
-  border-bottom: 1px dotted #886E91;
+  border-bottom: 1px dotted #bb77bb;
 }
 .unit-article a:hover {
-  border-bottom: 1px dotted #474747;
+  border-bottom: 1px dotted #ddbbdd;
 }
 .unit-article blockquote {
   border-left: 1em solid rgba(21, 25, 25, 0.8);
@@ -297,7 +300,9 @@ pre {
   margin-left: 0;
   margin-right: 0;
 }
-.unit-article ul, .unit-article ol, .unit-article dl {
+.unit-article ul,
+.unit-article ol,
+.unit-article dl {
   padding-left: 0;
 }
 .unit-article ul {
@@ -342,7 +347,8 @@ pre {
   margin-left: 0;
   margin-right: 0;
 }
-.unit-article p code, .unit-article li code {
+.unit-article p code,
+.unit-article li code {
   margin: 0 2px;
   padding: 2px 5px;
   white-space: nowrap;
@@ -372,14 +378,17 @@ pre {
 .unit-article .list-linear .list-head {
   margin-right: 4px;
 }
-.unit-article .list-category a, .unit-article .list-tag a {
+.unit-article .list-category a,
+.unit-article .list-tag a {
   border: 0 none;
 }
-.unit-article .list-category a:hover span, .unit-article .list-tag a:hover span {
+.unit-article .list-category a:hover span,
+.unit-article .list-tag a:hover span {
   background-color: #f99157;
 }
-.unit-article .list-category span, .unit-article .list-tag span {
-  background-color: #cdcdcd;
+.unit-article .list-category span,
+.unit-article .list-tag span {
+  background-color: #e25608;
   padding: 1px 5px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -447,9 +456,9 @@ pre {
   vertical-align: middle;
 }
 .layout-page .tag_box a {
-  background-color: #886E91;
+  background-color: #cc99cc;
   float: left;
-  border: 0px solid @violet;
+  border: 1px solid #884488;
   padding: 3px 6px 3px 6px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -457,12 +466,11 @@ pre {
   margin: 5px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
-/*  background-clip: padding-box; */
-/*  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
+  background-clip: padding-box;
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-  */
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s;
@@ -472,25 +480,23 @@ pre {
   user-select: none;
 }
 .layout-page .tag_box a:active {
-  /*
   -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-  */
-  background: @violet;
-  border: solid @violet;
+  background: #663366;
+  border: solid #663366;
 }
 .layout-page .tag_box a:hover {
-  background-color: @violet;
-  border: 1px solid @violet;
+  background-color: #bb77bb;
+  border: 1px solid #663366;
 }
 .layout-page .tag_box a:hover span {
-  background-color: @violet;
-  border: 1px solid @violet;
+  background-color: #e1e1e1;
+  border: 1px solid #bb77bb;
 }
 .layout-page .tag_box span {
   background-color: #fafafa;
-  border: 1px solid #886E91;
+  border: 1px solid #cc99cc;
   padding: 1px 5px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -502,10 +508,9 @@ pre {
   top: -2px;
   font-weight: bold;
   font-size: 10px;
-/*  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-  */
 }
 /* FOOTER
 ----------------------------------------------- */
@@ -517,15 +522,15 @@ pre {
   padding-bottom: 1.625em;
 }
 .the-footer a:link {
-  color: #886E91;
+  color: #cc99cc;
   border: 0;
 }
 .the-footer a:visited {
-  color: #77bb77;
+  color: #bb77bb;
   border: 0;
 }
 .the-footer a:hover {
-  color: #bbddbb;
+  color: #ddbbdd;
   border: 0;
 }
 .the-footer ul {
@@ -815,7 +820,9 @@ pre {
   .the-header .nav-global {
     width: 43.125em;
   }
-  .unit-article .unit-head-inner, .unit-article .entry-content, .unit-article .misc-content {
+  .unit-article .unit-head-inner,
+  .unit-article .entry-content,
+  .unit-article .misc-content {
     width: 43.125em;
   }
   .unit-article .unit-foot-inner {

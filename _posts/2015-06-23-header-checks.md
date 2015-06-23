@@ -7,27 +7,40 @@ tags: [tech, computers, postfix, header_check]
 ---
 {% include JB/setup %}
 
-Here's the scenario: I have a fancy relay, which I want to use for externally-bound email. Unfortunately, I have a single smtp server that handles both internal and external mail. The general problem is well covered online - [Marcelog](http://marcelog.github.io/articles/configure_postfix_forward_email_regex_subject_transport_relay.html) has a particularly clear guide. I don't have an exhaustive list of external domains to filter against. No problem, this is what the `!` operator is all about.
+Here's the scenario: I have a fancy relay, which I want to use for externally-bound email. Unfortunately, I have a single smtp server that handles both internal and external mail. This general problem is well covered - [Marcelog](http://marcelog.github.io/articles/configure_postfix_forward_email_regex_subject_transport_relay.html)'s guide was particularly helpful - I decided to use a header check.
+
+In `/etc/postfix/main.cf`, I let postfix know that I'll be using a header check. 
+```
+header_checks = pcre:/etc/postfix/header_checks
+```
+
+I don't have an exhaustive list of external domains to filter against, so I look for anything *not* going to a corporate account. Here's what I stick in `/etc/postfix/header_checks`
 
 ```
 !/^[tT]o:.*@moopinc\.com/ FILTER relay:smtp-relay.fancyshmancyrelay.com
 ```
 
-Actually, one problem - This doesn't work. Everything is going through the relay. Trying to figure out what's going on, I changed the FILTER to a WARN.
-
-```
-!/^[tT]o:.*@moopinc\.com/ WARN EXTERNAL Address
-/^[tT]o:.*@moopinc\.com/ WARN MOOPINC Address
-```
-
-Then I shot off an email to my corporate account.
+Now, I apply this change (`postmap hash:/etc/postfix/header_checks`) and reload postfix (`postfix reload`). Then I shot off emails to my corporate account and personal accounts.
 ```
 $ mailx -s 'Testing' jmhbrown@moopinc.com
 EOT
 Null message body; hope that's ok
+
+$ mailx -s 'Testing' jmhbrown@zerpmail.com
+EOT
+Null message body; hope that's ok
 ```
 
-Here's what I found in `/var/log/maillog`:
+Only, both those messages go through the fancy relay. I changed the FILTER in my header checks to a WARN, and try again
+
+```
+# Use WARN to help debug
+!/^[tT]o:.*@moopinc\.com/ WARN EXTERNAL Address
+/^[tT]o:.*@moopinc\.com/ WARN MOOPINC Address
+```
+
+
+Here's what I find in `/var/log/maillog`:
 ```
 2015-06-23T15:51:47.635874-04:00 test-smtp-server postfix/postfix-script[26765]: refreshing the Postfix mail system
 2015-06-23T15:51:47.644627-04:00 test-smtp-server postfix/master[28112]: reload -- version 2.6.6, configuration /etc/postfix
@@ -43,7 +56,7 @@ Here's what I found in `/var/log/maillog`:
 2015-06-23T15:51:56.528548-04:00 test-smtp-server postfix/cleanup[26774]: 7F39E20721: message-id=<20150623195156.7FSKJSDFKS@test-smtp-server>
 ```
 
-Ah, so, that makes sense. The header spans multiple lines and it seems that a match on any line in the header is enough to trigger the filter. If we switch back to our original header_checks, it's obvious that the regex is a little too eager. 
+Ah, that makes sense. The header spans multiple lines and it seems that a match on any line in the header is enough to trigger the filter. If we switch back to our original header_checks, it's obvious that the regex is a little too eager. 
 ```
 $ postmap -q 'Subject: Testing' pcre:/etc/postfix/header_checks
 FILTER relay:smtp-relay.fancyshmancyrelay.com
