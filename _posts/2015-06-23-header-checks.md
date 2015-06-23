@@ -22,6 +22,7 @@ I don't have an exhaustive list of external domains to filter against, so I look
 ```
 
 Now, I apply this change (`postmap hash:/etc/postfix/header_checks`) and reload postfix (`postfix reload`). Then I shot off emails to my corporate account and personal accounts.
+
 ```
 $ mailx -s 'Testing' jmhbrown@moopinc.com
 EOT
@@ -42,6 +43,7 @@ Only, both those messages go through the fancy relay. I changed the FILTER in my
 
 
 Here's what I find in `/var/log/maillog`:
+
 ```
 2015-06-23T15:51:47.635874-04:00 test-smtp-server postfix/postfix-script[26765]: refreshing the Postfix mail system
 2015-06-23T15:51:47.644627-04:00 test-smtp-server postfix/master[28112]: reload -- version 2.6.6, configuration /etc/postfix
@@ -58,6 +60,7 @@ Here's what I find in `/var/log/maillog`:
 ```
 
 Ah, that makes sense. The header spans multiple lines and it seems that a match on any line in the header is enough to trigger the filter. If we switch back to our original header_checks, it's obvious that the regex is a little too eager. 
+
 ```
 $ postmap -q 'Subject: Testing' pcre:/etc/postfix/header_checks
 FILTER relay:smtp-relay.fancyshmancyrelay.com
