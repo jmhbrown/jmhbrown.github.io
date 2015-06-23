@@ -10,6 +10,7 @@ tags: [tech, computers, postfix, header_check]
 Here's the scenario: I have a fancy relay, which I want to use for externally-bound email. Unfortunately, I have a single smtp server that handles both internal and external mail. This general problem is well covered - [Marcelog](http://marcelog.github.io/articles/configure_postfix_forward_email_regex_subject_transport_relay.html)'s guide was particularly helpful - I decided to use a header check.
 
 In `/etc/postfix/main.cf`, I let postfix know that I'll be using a header check. 
+
 ```
 header_checks = pcre:/etc/postfix/header_checks
 ```
