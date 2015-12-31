@@ -131,7 +131,7 @@ No styleguide reference.
 @violet:    #6c71c4;
 @blue:      #268bd2;
 @cyan:      #2aa198;
-@green:     #859900;
+@green:     #44cd55;
 
 */
 /* Junction Font
@@ -236,6 +236,7 @@ pre {
   background-repeat: repeat;
   background-position: 0 0;
   background-color: #CCCDEC;
+  background-color: #44CD55;
   margin-bottom: 1.625em;
   padding-top: 1.625em;
   padding-bottom: 1.625em;
@@ -284,13 +285,13 @@ pre {
   margin-top: 0;
 }
 .unit-article a:link {
-  border-bottom: 1px dotted #cc99cc;
+  border-bottom: 1px dotted #7CCC43;
 }
 .unit-article a:visited {
-  border-bottom: 1px dotted #bb77bb;
+  border-bottom: 1px dotted #8ec643;
 }
 .unit-article a:hover {
-  border-bottom: 1px dotted #ddbbdd;
+  border-bottom: 1px dotted #b5dbab;
 }
 .unit-article blockquote {
   border-left: 1em solid rgba(21, 25, 25, 0.8);
@@ -456,7 +457,7 @@ pre {
   vertical-align: middle;
 }
 .layout-page .tag_box a {
-  background-color: #cc99cc;
+  background-color: #7CCC43;
   float: left;
   border: 1px solid #884488;
   padding: 3px 6px 3px 6px;
@@ -487,16 +488,16 @@ pre {
   border: solid #663366;
 }
 .layout-page .tag_box a:hover {
-  background-color: #bb77bb;
+  background-color: #8ec643;
   border: 1px solid #663366;
 }
 .layout-page .tag_box a:hover span {
   background-color: #e1e1e1;
-  border: 1px solid #bb77bb;
+  border: 1px solid #8ec643;
 }
 .layout-page .tag_box span {
   background-color: #fafafa;
-  border: 1px solid #cc99cc;
+  border: 1px solid #7CCC43;
   padding: 1px 5px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -522,15 +523,15 @@ pre {
   padding-bottom: 1.625em;
 }
 .the-footer a:link {
-  color: #cc99cc;
+  color: #7CCC43;
   border: 0;
 }
 .the-footer a:visited {
-  color: #bb77bb;
+  color: #8ec643;
   border: 0;
 }
 .the-footer a:hover {
-  color: #ddbbdd;
+  color: #b5dbaa;
   border: 0;
 }
 .the-footer ul {
