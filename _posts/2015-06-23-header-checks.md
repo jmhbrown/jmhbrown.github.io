@@ -25,12 +25,7 @@ Now, I apply this change (`postmap hash:/etc/postfix/header_checks`) and reload 
 
 ```
 $ mailx -s 'Testing' jmhbrown@moopinc.com
-EOT
-Null message body; hope that's ok
-
 $ mailx -s 'Testing' jmhbrown@zerpmail.com
-EOT
-Null message body; hope that's ok
 ```
 
 Only, both those messages go through the fancy relay. I changed the FILTER in my header checks to a WARN, and try again
