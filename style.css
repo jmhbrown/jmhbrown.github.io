@@ -1,0 +1,29 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1,h2 {
+  color: #476b6b;
+  font-weight: bold;
+}
+
+.content {
+  margin: 0 2%;
+  float: left;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.box {
+  padding: 10px 20px;
+  width: 80%;
+  min-width: 20em;
+  background: #ffeeee;
+}
+
